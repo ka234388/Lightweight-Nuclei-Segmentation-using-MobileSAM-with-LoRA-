@@ -144,17 +144,6 @@ The model performance was highly dependent on data splits, with Fold 1 consisten
 
 Blurry or poorly defined segmentation edges in early epochs, visible in watershed output, indicate the model was still refining boundary precision even at 10 epochs. Some background noise or artifacts were occasionally segmented as nuclei, particularly in regions with staining artifacts or faint tissue regions.
 
-## How This Is Useful and Why It Matters
-
-This project demonstrates that state-of-the-art foundation models can be efficiently adapted for specialized medical imaging tasks using parameter-efficient fine-tuning. Where previously, hospitals and research labs would need either expensive GPU clusters or to rely on general-purpose segmentation tools, this approach enables effective nuclei instance segmentation on affordable consumer GPUs.
-
-The work provides practical evidence that LoRA fine-tuning preserves the broad segmentation knowledge from pre-training while adapting to domain-specific nuclei morphology. This has immediate implications for digital pathology workflows: automated instance segmentation can enable rapid quantitative analysis of tissue samples, potentially supporting diagnosis, treatment planning, and research applications.
-
-The cross-organ generalization (training on one organ, testing on others through cross-validation) demonstrates the model learns fundamental nuclei segmentation principles rather than organ-specific features. This suggests the fine-tuned model could be deployed on diverse tissue types and potentially even different imaging modalities with minor adjustments.
-
-The documented comparison between 5-epoch and 10-epoch training provides clear guidance for practitioners: the 31% improvement in panoptic quality justifies the additional computational cost of longer training. This finding extends beyond this specific project to other foundation model fine-tuning scenarios.
-
-Future applications include integrating this approach into digital pathology platforms, enabling pathologists to rapidly analyze whole-slide images, supporting research on nuclei morphology and distribution patterns, and potentially assisting in cancer detection and grading. The parameter-efficient approach makes it feasible to fine-tune separate models for different organs or disease types without expensive retraining.
 
 ## Getting Started
 
